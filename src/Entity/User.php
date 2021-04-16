@@ -71,6 +71,10 @@ class User implements UserInterface
      */
     private $blogPosts;
 
+    public function __toString() {
+        return $this->nom;
+    }
+
     public function __construct()
     {
         $this->peintures = new ArrayCollection();

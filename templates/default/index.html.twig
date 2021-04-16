@@ -3,6 +3,8 @@
 {% block title %}Hello DefaultController!{% endblock %}
 
 {% block body %}
+
+
     <!--FIRST SECTION -->
     <section class="hero-wrap js-fullheight" style="background-image: url('{{ asset('img/bg_3.jpg') }}');" data-section="home">
         <div class="overlay"></div>
@@ -31,7 +33,7 @@
                         <div class="media-body">
                             <h3 class="heading mb-3">Perfectly Design</h3>
                             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                            <p><a href="#" class="btn btn-primary">Read more</a></p>
+                            <p><a href="#" class="btn" style="background-color:  #a64bf4; color: #F3F3F3">Voir plus</a></p>
                         </div>
                     </div>
                 </div>
@@ -41,7 +43,7 @@
                         <div class="media-body">
                             <h3 class="heading mb-3">Carefully Planned</h3>
                             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                            <p><a href="#" class="btn btn-primary">Read more</a></p>
+                            <p><a href="#" class="btn" style="background-color:  #a64bf4; color: #F3F3F3">Voir plus</a></p>
                         </div>
                     </div>
                 </div>
@@ -51,14 +53,14 @@
                         <div class="media-body">
                             <h3 class="heading mb-3">Smartly Execute</h3>
                             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                            <p><a href="#" class="btn btn-primary">Read more</a></p>
+                            <p><a href="#" class="btn" style="background-color:  #a64bf4; color: #F3F3F3">Voir plus</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+<!--PART 2 Request
     <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="section-counter" data-section="about">
         <div class="container">
             <div class="row d-flex">
@@ -152,109 +154,45 @@
             </div>
         </div>
     </section>
+    -->
 
     <section class="ftco-section ftco-project bg-light" data-section="projects">
         <div class="container-fluid px-md-5">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Accomplishments</span>
-                    <h2 class="mb-4">Our Projects</h2>
+                    <span class="subheading">Réalisations</span>
+                    <h2 class="mb-4">Les 4 Dernieres Oeuvres</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-12 testimonial">
                     <div class="carousel-project owl-carousel">
+                        {% for peinture in peintures %}
                         <div class="item">
                             <div class="project">
                                 <div class="img">
-                                    <img src="{{ asset('img/project-1.jpg') }}" class="img-fluid" alt="Colorlib Template">
-                                    <a href="{{ asset('images/project-1.jpg') }}" class="icon image-popup d-flex justify-content-center align-items-center">
+                                    <img src="{{ peinture.file }}" class="img-fluid" alt="Colorlib Template">
+                                    <a href="{{ peinture.file }}" class="icon image-popup d-flex justify-content-center align-items-center">
                                         <span class="icon-expand"></span>
                                     </a>
                                 </div>
                                 <div class="text px-4">
-                                    <h3><a href="#">Office Interior Design</a></h3>
-                                    <span>Interior Design</span>
+                                    <h3><a href="#">{{ peinture.nom }}</a></h3>
+                                    <span>{{ peinture.prix }} € </span>
+                                    <p><a href="#" class="btn" style="background-color:  #a64bf4; color: #F3F3F3">Voir</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="project">
-                                <div class="img">
-                                    <img src="{{ asset('img/project-2.jpg') }}" class="img-fluid" alt="Colorlib Template">
-                                    <a href="{{ asset('img/project-2.jpg') }}" class="icon image-popup d-flex justify-content-center align-items-center">
-                                        <span class="icon-expand"></span>
-                                    </a>
-                                </div>
-                                <div class="text px-4">
-                                    <h3><a href="#">Office Interior Design</a></h3>
-                                    <span>Interior Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="project">
-                                <div class="img">
-                                    <img src="{{ asset('img/project-3.jpg') }}" class="img-fluid" alt="Colorlib Template">
-                                    <a href="{{ asset('img/project-3.jpg') }}" class="icon image-popup d-flex justify-content-center align-items-center">
-                                        <span class="icon-expand"></span>
-                                    </a>
-                                </div>
-                                <div class="text px-4">
-                                    <h3><a href="#">Office Interior Design</a></h3>
-                                    <span>Interior Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="project">
-                                <div class="img">
-                                    <img src="{{ asset('img/project-4.jpg') }}" class="img-fluid" alt="Colorlib Template">
-                                    <a href="{{ asset('img/project-4.jpg') }}" class="icon image-popup d-flex justify-content-center align-items-center">
-                                        <span class="icon-expand"></span>
-                                    </a>
-                                </div>
-                                <div class="text px-4">
-                                    <h3><a href="#">Office Interior Design</a></h3>
-                                    <span>Interior Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="project">
-                                <div class="img">
-                                    <img src="{{ asset('img/project-5.jpg') }}" class="img-fluid" alt="Colorlib Template">
-                                    <a href="{{ asset('img/project-5.jpg') }}" class="icon image-popup d-flex justify-content-center align-items-center">
-                                        <span class="icon-expand"></span>
-                                    </a>
-                                </div>
-                                <div class="text px-4">
-                                    <h3><a href="#">Office Interior Design</a></h3>
-                                    <span>Interior Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="project">
-                                <div class="img">
-                                    <img src="{{ asset('img/project-6.jpg') }}" class="img-fluid" alt="Colorlib Template">
-                                    <a href="{{ asset('img/project-6.jpg') }}" class="icon image-popup d-flex justify-content-center align-items-center">
-                                        <span class="icon-expand"></span>
-                                    </a>
-                                </div>
-                                <div class="text px-4">
-                                    <h3><a href="#">Office Interior Design</a></h3>
-                                    <span>Interior Design</span>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+            <button class="btn btn-dark">Voir toutes les oeuvres </button>
         </div>
     </section>
-
+ <!--
     <section class="testimony-section" data-section="testimony">
         <div class="container">
             <div class="row ftco-animate justify-content-center">
@@ -297,17 +235,19 @@
             </div>
         </div>
     </section>
+    -->
 
     <section class="ftco-section bg-light" data-section="blog">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Blog</span>
-                    <h2 class="mb-4">Read Our Stories</h2>
+                    <span class="subheading">NewsLetter</span>
+                    <h2 class="mb-4">Découvrez les dernieres actualités</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
                 </div>
             </div>
             <div class="row d-flex">
+                {% for blog in blogposts %}
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end">
                         <a href="{{ path('single') }}" class="block-20" style="background-image:  url({{ asset('img/image_1.jpg') }});">
@@ -322,151 +262,21 @@
                                     <span class="mos">March</span>
                                 </div>
                             </div>
-                            <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                            <h3 class="heading">{{ blog.titre }}</a></h3>
+                            <p>{{ blog.contenu }}</p>
                             <div class="d-flex align-items-center mt-4 meta">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                                <p class="mb-0"><a href="{{ path('single') }}" class="btn btn-secondary">Voir plus <span class="ion-ios-arrow-round-forward"></span></a></p>
                                 <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+                                    <a href="#" class="mr-2">{{ blog.user }}</a>
+                                    <a href="#" class="meta-chat"><span class="icon-chat"></span></a>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-                        </a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center pt-2 mb-4 topp">
-                                <div class="one mr-3">
-                                    <span class="day">10</span>
-                                </div>
-                                <div class="two">
-                                    <span class="yr">2019</span>
-                                    <span class="mos">March</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <div class="d-flex align-items-center mt-4 meta">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry">
-                        <a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-                        </a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center pt-2 mb-4 topp">
-                                <div class="one mr-3">
-                                    <span class="day">05</span>
-                                </div>
-                                <div class="two">
-                                    <span class="yr">2019</span>
-                                    <span class="mos">March</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <div class="d-flex align-items-center mt-4 meta">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
-                        </a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center pt-2 mb-4 topp">
-                                <div class="one mr-3">
-                                    <span class="day">12</span>
-                                </div>
-                                <div class="two">
-                                    <span class="yr">2019</span>
-                                    <span class="mos">March</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <div class="d-flex align-items-center mt-4 meta">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
-                        </a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center pt-2 mb-4 topp">
-                                <div class="one mr-3">
-                                    <span class="day">10</span>
-                                </div>
-                                <div class="two">
-                                    <span class="yr">2019</span>
-                                    <span class="mos">March</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <div class="d-flex align-items-center mt-4 meta">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry">
-                        <a href="single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
-                        </a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center pt-2 mb-4 topp">
-                                <div class="one mr-3">
-                                    <span class="day">05</span>
-                                </div>
-                                <div class="two">
-                                    <span class="yr">2019</span>
-                                    <span class="mos">March</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <div class="d-flex align-items-center mt-4 meta">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                {% endfor %}
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="ftco-section contact-section ftco-no-pb" data-section="contact">

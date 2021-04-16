@@ -19,6 +19,14 @@ class PeintureRepository extends ServiceEntityRepository
         parent::__construct($registry, Peinture::class);
     }
 
+    public function lastThree() {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Peinture[] Returns an array of Peinture objects
     //  */

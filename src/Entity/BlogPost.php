@@ -45,6 +45,7 @@ class BlogPost
      */
     private $user;
 
+
     /**
      * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="blogpost")
      */
